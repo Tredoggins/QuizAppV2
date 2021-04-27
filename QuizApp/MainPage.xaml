@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:QuizApp"
+             x:Class="QuizApp.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">HotPink</Color>
+            <Color x:Key="secondary">Black</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <local:SwipeContainer Swipe="OnSwiped">
+    <Grid BackgroundColor="{StaticResource primary}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Hello" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title" x:Name="text" TextColor="{StaticResource secondary}"></Label>
+        <Image BackgroundColor="{StaticResource secondary}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" x:Name="image" Aspect="AspectFit" WidthRequest="300" HorizontalOptions="Center"></Image>
+        <!--<Button Grid.Row="2" Grid.Column="1" Text="True" x:Name="b1" TextColor="{StaticResource primary}" BackgroundColor="{StaticResource secondary}" Clicked="OnButtonClicked"></Button>
+        <Button Grid.Row="2" Grid.Column="2" Text="False" x:Name="b2" TextColor="{StaticResource primary}" BackgroundColor="{StaticResource secondary}" Clicked="OnButtonClicked"></Button>-->
+            <Label Grid.Row="2" Grid.Column="1" Text="&#x2190;False" x:Name="b1" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label Grid.Row="2" Grid.Column="2" Text="True&#x2192;" x:Name="b2" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>    
+    </Grid>
+    </local:SwipeContainer>
+
+</ContentPage>
