@@ -18,10 +18,10 @@ namespace QuizApp
             InitializeComponent();
             Questions = new List<Question> {
                 new Question("The Sky Is Blue","Right","cumuluscloud.jpg"),
-                new Question("This Class is Fun","Right",""),
-                new Question("Question 1 was False","Left",""),
+                new Question("This Class is Fun","Right","product_50349_product_shots1.jpg"),
+                new Question("Question 1 was False","Left","q1.gif"),
                 new Question("Matt Green is a Great Teacher","Right","mattgreen.jpg"),
-                new Question("Question 4 was False","Left","")
+                new Question("Question 4 was False","Left","q4.png")
             };
             Current = 0;
             text.Text = Questions[0].MyQuestion;
@@ -59,6 +59,14 @@ namespace QuizApp
                 b1.IsVisible = false;
                 b2.IsVisible = false;
                 text.Text = "You Got " + NumCorrect + "/" + Questions.Count;
+                if ((double) NumCorrect / Questions.Count > 0.5)
+                {
+                    image.Source = "goodjob.jpg";
+                }
+                else
+                {
+                    image.Source = "TryHarder.png";
+                }
             }
         }
 
